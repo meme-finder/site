@@ -20,7 +20,7 @@
 	<h1>Поиск по поллекции мемов</h1>
 
 	<div class="search-box">
-		<input type="text" bind:value={query} on:keyup={search} style="width: 100%" />
+		<input type="text" placeholder="Введите описание мема" bind:value={query} on:keyup={search} style="width: 100%" />
 	</div>
 
 	<div class="results">
@@ -33,9 +33,12 @@
 <style>
 	.results {
 		display: grid;
-		align-items: center;
-		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-		grid-gap: 1.5rem;
+		/* align-items: center; */
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		grid-auto-rows: 1fr;
+		grid-gap: 1rem;
+		transition: 1s;
+		animation: slide 2000ms ease infinite alternate;
 	}
 
 	.search {

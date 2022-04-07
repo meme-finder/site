@@ -7,7 +7,7 @@
 </main>
 
 <footer>
-	<p>Memesearch</p>
+	<p>Meme Search, by DeSpecTDr and AveryanAlex</p>
 </footer>
 
 <style>
@@ -17,7 +17,7 @@
 		flex-direction: column;
 		padding: 1rem;
 		width: 100%;
-		max-width: 80vw;
+		max-width: 95vw;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
