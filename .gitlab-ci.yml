@@ -8,17 +8,19 @@ include:
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml
 
+stages:
+  - test
+  - build
+
 variables:
   DS_EXCLUDED_ANALYZERS: "gemnasium-maven, gemnasium-python, bundler-audit, retire.js"
 
 container_scanning:
+  needs: [ docker_build ]
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
   variables:
     DOCKER_IMAGE: $CI_REGISTRY_IMAGE:edge
 
-gemnasium-dependency_scanning:
-  needs: []
-
-license_scanning:
+docker_build:
   needs: []
