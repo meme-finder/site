@@ -13,8 +13,10 @@ RUN yarn build
 # final image
 FROM node:16-alpine
 
+ENV NODE_ENV=production
 WORKDIR /app
-COPY --from=build /app/build .
-COPY package.json .
 
-CMD ["node", "."]
+COPY --from=build /app/build /app/package.json /app/yarn.lock .
+RUN yarn install
+
+CMD ["node", "build"]
