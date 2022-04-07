@@ -4,6 +4,7 @@ include:
     file: Docker.gitlab-ci.yml
   - template: Security/Dependency-Scanning.gitlab-ci.yml
   - template: Security/Container-Scanning.gitlab-ci.yml
+  - template: Security/License-Scanning.gitlab-ci.yml
 
 variables:
   DS_EXCLUDED_ANALYZERS: "gemnasium-maven, gemnasium-python, bundler-audit, retire.js"
