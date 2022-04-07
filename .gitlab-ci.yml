@@ -15,12 +15,12 @@ stages:
 variables:
   DS_EXCLUDED_ANALYZERS: "gemnasium-maven, gemnasium-python, bundler-audit, retire.js"
 
+docker_build:
+  needs: []
+
 container_scanning:
-  needs: [ docker_build ]
+  needs: [ "docker_build" ]
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
   variables:
     DOCKER_IMAGE: $CI_REGISTRY_IMAGE:edge
-
-docker_build:
-  needs: []
