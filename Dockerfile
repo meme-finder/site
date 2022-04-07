@@ -17,6 +17,6 @@ ENV NODE_ENV=production
 WORKDIR /app
 
 COPY --from=build /app/build /app/package.json /app/yarn.lock .
-RUN yarn install
+RUN yarn install --production
 
-CMD ["node", "build"]
+CMD ["node", "."]
