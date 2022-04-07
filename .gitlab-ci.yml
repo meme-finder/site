@@ -17,3 +17,6 @@ container_scanning:
 
 gemnasium-dependency_scanning:
   needs: []
+
+license_scanning:
+  needs: []
