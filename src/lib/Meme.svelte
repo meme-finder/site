@@ -35,7 +35,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: space-around;
+		justify-content: space-between;
 	}
 
 	.image {
@@ -45,7 +45,6 @@
 	}
 
 	.image-container {
-		flex: 1;
 		margin: 5px;
 	}
 </style>
