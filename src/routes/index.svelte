@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Memesearch</title>
+	<title>MemeSearch</title>
 </svelte:head>
 
 <section>

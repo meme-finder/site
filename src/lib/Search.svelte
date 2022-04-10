@@ -17,11 +17,11 @@
 </script>
 
 <div class="search">
-	<h1>Поиск по поллекции мемов</h1>
+	<h1>Поиск по коллекции картинок</h1>
 
 	<input
 		type="text"
-		placeholder="Введите описание мема"
+		placeholder="Введите описание картинки"
 		bind:value={query}
 		on:keyup={search}
 		class="search-box"
