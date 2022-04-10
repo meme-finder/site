@@ -6,7 +6,7 @@
 	let hits = [];
 
 	async function search() {
-		const result = await (await fetch('http://localhost:8080/images?q=' + query)).json();
+		const result = await (await fetch(import.meta.env.VITE_API_BASE + '/images?q=' + query)).json();
 		hits = result;
 		console.log(hits);
 	}

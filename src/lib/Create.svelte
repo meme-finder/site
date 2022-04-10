@@ -16,7 +16,7 @@
 </script> -->
 
 <h1>Создать мем</h1>
-<form class="create-form" action="http://localhost:8080/images" method="post">
+<form class="create-form" action="${import.meta.env.VITE_API_BASE}/images" method="post">
 	<input name="name" type="text" placeholder="Имя" />
 	<input name="link" type="text" placeholder="Ссылка" />
 	<button type="submit">Создать</button>

@@ -7,9 +7,7 @@ declare namespace App {
 		userid: string;
 	}
 
-	interface Platform {}
-
-	interface Session {}
-
-	interface Stuff {}
+	interface ImportMetaEnv {
+		VITE_API_BASE: string;
+	}
 }
