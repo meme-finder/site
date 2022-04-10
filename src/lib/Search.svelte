@@ -49,19 +49,4 @@
 		align-items: center;
 		width: 100%;
 	}
-
-	.search-box {
-		width: min(90%, 1000px);
-		font-size: 1.5rem;
-		margin-bottom: 1rem;
-		border: none;
-		border-bottom: 2px solid blue;
-		height: 2rem;
-		transition: 0.25s;
-		background-color: var(--primary-color);
-	}
-
-	.search-box:focus {
-		outline: none;
-	}
 </style>

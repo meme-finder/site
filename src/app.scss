@@ -90,9 +90,29 @@ input,
 button {
 	font-size: inherit;
 	font-family: inherit;
+	background-color: #10c7f5;
+	border: none;
+	border-radius: 5px;
+	padding: 15px 32px;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
 }
 
-button:focus:not(:focus-visible) {
+input[type='text'] {
+	width: min(90%, 1000px);
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	border: none;
+	border-bottom: 2px solid blue;
+	height: 2rem;
+	transition: 0.25s;
+	background-color: var(--primary-color);
+}
+
+input:focus {
 	outline: none;
 }
 
