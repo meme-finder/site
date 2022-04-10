@@ -6,8 +6,8 @@
 	let hits = [];
 
 	async function search() {
-		const result = await (await fetch('/search?q=' + query)).json();
-		hits = result.hits;
+		const result = await (await fetch('http://localhost:8080/images?q=' + query)).json();
+		hits = result;
 		console.log(hits);
 	}
 

@@ -4,9 +4,9 @@
 
 <div class="meme-container">
 	<div class="meme">
-		<h1 class="meme-title">{meme.title}</h1>
+		<h1 class="meme-title">{meme.name}</h1>
 		<div class="image-container">
-			<img src={meme.poster} alt={meme.title} class="image" />
+			<img src={meme.link} alt={meme.name} class="image" />
 		</div>
 	</div>
 </div>
