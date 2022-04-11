@@ -8,7 +8,7 @@
 
 <footer>
 	<p>
-		Image Search, by <a href="https://t.me/despectdr">DeSpecTDr</a>,
+		MemeSearch, by <a href="https://t.me/despectdr">DeSpecTDr</a>,
 		<a href="https://t.me/averyanalex">AveryanAlex</a>
 		and <a href="https://t.me/gasilont">Gasilont</a>
 	</p>

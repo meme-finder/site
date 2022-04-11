@@ -15,7 +15,7 @@
 	};
 </script> -->
 
-<h1>Добавить картинку</h1>
+<h1>Добавить мем</h1>
 <form class="create-form" action="{import.meta.env.VITE_API_BASE}/images" method="post">
 	<input name="name" type="text" placeholder="Имя" />
 	<input name="link" type="text" placeholder="Ссылка" />

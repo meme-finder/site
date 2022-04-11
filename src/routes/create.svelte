@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Добавить картинку</title>
+	<title>Добавить мем</title>
 </svelte:head>
 
 <section>
