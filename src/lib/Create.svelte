@@ -19,6 +19,7 @@
 <form class="create-form" action="{import.meta.env.VITE_API_BASE}/images" method="post">
 	<input name="name" type="text" placeholder="Имя" />
 	<input name="link" type="text" placeholder="Ссылка" />
+	<input name="description" type="text" placeholder="Описание" />
 	<button type="submit">Добавить</button>
 </form>
 

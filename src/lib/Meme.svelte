@@ -8,6 +8,7 @@
 		<div class="image-container">
 			<img src={meme.link} alt={meme.name} class="image" />
 		</div>
+		<p class="meme-description">{meme.description}</p>
 	</div>
 </div>
 
