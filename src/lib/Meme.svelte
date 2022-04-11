@@ -13,16 +13,18 @@
 
 <style>
 	.meme-container {
-		background-color: #22c76c;
+		background: rgb(112, 167, 214);
+		background: linear-gradient(60deg, rgba(112, 167, 214, 1) 25%, rgba(43, 167, 162, 1) 72%);
 		border-radius: 5px;
 		border-width: 5px;
-		border-color: #22c76c;
-		border-style: solid;
-		transition: 0.25s;
+		transition: 0.3s ease-out;
+		cursor: pointer;
 	}
 
 	.meme-container:hover {
-		border-color: #11f778;
+		transform: scale(1.03);
+		/* background-position: 100px; */
+		/* background: linear-gradient(240deg, rgba(112, 167, 214, 1) 25%, rgba(43, 167, 162, 1) 72%); */
 	}
 
 	.meme-title {
@@ -45,6 +47,6 @@
 	}
 
 	.image-container {
-		margin: 5px;
+		margin: 8px;
 	}
 </style>

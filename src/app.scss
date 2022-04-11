@@ -21,7 +21,8 @@
 body {
 	min-height: 100vh;
 	margin: 0;
-	background-color: var(--primary-color);
+	background: rgb(176, 200, 221);
+	background: linear-gradient(152deg, rgba(176, 200, 221, 1) 25%, rgba(81, 121, 156, 1) 72%);
 }
 
 body::before {
@@ -90,7 +91,7 @@ input,
 button {
 	font-size: inherit;
 	font-family: inherit;
-	background-color: #10c7f5;
+	background: none;
 	border: none;
 	padding: 15px 32px;
 	text-decoration: none;
@@ -112,7 +113,6 @@ input[type='text'] {
 	border-bottom: 2px solid blue;
 	height: 2rem;
 	transition: 0.25s;
-	background-color: var(--primary-color);
 }
 
 input:focus {
