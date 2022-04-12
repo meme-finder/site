@@ -2,6 +2,7 @@
 	export let meme;
 </script>
 
+<!-- Компонент картинки -->
 <div class="meme-container">
 	<div class="meme">
 		<h1 class="meme-title">{meme.name}</h1>
@@ -12,14 +13,17 @@
 	</div>
 </div>
 
+<!-- Пример стилей -->
 <style>
 	.meme-container {
-		background: rgb(112, 167, 214);
-		background: linear-gradient(60deg, rgba(112, 167, 214, 1) 25%, rgba(43, 167, 162, 1) 72%);
-		border-radius: 5px;
-		border-width: 5px;
-		transition: 0.3s ease-out;
-		cursor: pointer;
+		background: rgb(112, 167, 214); /* цвет заднего фона */
+		background: linear-gradient(60deg, 
+								rgba(112, 167, 214, 1) 25%, 
+								gba(43, 167, 162, 1) 72%); /* градиент */
+		border-radius: 5px; /* радиус углов */
+		border-width: 5px; /* ширина углов */
+		transition: 0.3s ease-out; /* анимация */
+		cursor: pointer; /* вид курсора при наведении */
 	}
 
 	.meme-container:hover {

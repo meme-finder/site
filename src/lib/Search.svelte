@@ -5,17 +5,22 @@
 	let query = '';
 	let hits = [];
 
+	// Функция отправляет запрос на веб-сервер и получает JSON 
+	// метаданных картинок 
 	async function search() {
-		const result = await (await fetch(import.meta.env.VITE_API_BASE + '/images?q=' + query)).json();
+		const result = await (await fetch(import.meta.env.VITE_API_BASE 
+									+ '/images?q=' + query)).json();
 		hits = result;
 		console.log(hits);
 	}
 
+	// При загрузке страницы вызывается функция search
 	onMount(async () => {
 		await search();
 	});
 </script>
 
+<!-- Компонент поисковика картинок -->
 <div class="search">
 	<h1>Поиск по коллекции мемов</h1>
 
