@@ -20,6 +20,7 @@
 	<input name="name" type="text" placeholder="Имя" />
 	<input name="link" type="text" placeholder="Ссылка" />
 	<input name="description" type="text" placeholder="Описание" />
+	<input name="text" type="text" placeholder="Текст" />
 	<button type="submit">Добавить</button>
 </form>
 
