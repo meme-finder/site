@@ -6,7 +6,14 @@
 	<div class="meme">
 		<h1 class="meme-title">{meme.name}</h1>
 		<div class="image-container">
-			<img src={meme.link} alt={meme.name} class="image" />
+			<img
+				src="{import.meta.env.VITE_API_BASE}/static/images/preview/{meme.id.substring(
+					0,
+					2
+				)}/{meme.id.substring(2, 4)}/{meme.id.substring(4)}.webp"
+				alt={meme.name}
+				class="image"
+			/>
 		</div>
 		<p class="meme-description">{meme.description}</p>
 	</div>
