@@ -1,26 +1,37 @@
-<!-- <script lang="ts">
-	export let meme = { name: 'Имя', link: 'https://example.org/image.png' };
-	const onSubmit = async (event: Event) => {
-		event.preventDefault();
-		let formData = new FormData();
-		formData.append('name', meme.name);
-		formData.append('link', meme.link);
-		const rawResponse = await fetch('http://localhost:8080/images', {
+<script lang="ts">
+	import { getBase64 } from '$lib/base64';
+
+	let fileinput;
+	let image: File;
+	let name: String;
+	let description: String;
+	let text: String;
+
+	const onImageSelected = (e) => {
+		image = e.target.files[0];
+	}
+
+	async function onSubmit() {
+		console.log(image);
+		let img_base64 = await getBase64(image);
+		let meme = { image: img_base64, name: name, description: description, text: text };
+		await fetch(import.meta.env.VITE_API_BASE + '/images', {
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
+				'Content-Type': 'application/json'
 			},
-			body: formData
+			body: JSON.stringify(meme)
 		});
-	};
-</script> -->
+		alert('Мем добавлен!')
+	}
+</script>
 
 <h1>Добавить мем</h1>
-<form class="create-form" action="{import.meta.env.VITE_API_BASE}/images" method="post">
-	<input name="name" type="text" placeholder="Имя" />
-	<input name="link" type="text" placeholder="Ссылка" />
-	<input name="description" type="text" placeholder="Описание" />
-	<input name="text" type="text" placeholder="Текст" />
+<form class="create-form" on:submit|preventDefault={onSubmit}>
+	<input name="image" on:change={(e) => onImageSelected(e)} bind:this={fileinput} type="file" accept=".jpg, .jpeg, .png, .webp" />
+	<input name="name" bind:value={name} type="text" placeholder="Имя" />
+	<input name="description" bind:value={description} type="text" placeholder="Описание" />
+	<input name="text" bind:value={text} type="text" placeholder="Текст" />
 	<button type="submit">Добавить</button>
 </form>
 
