@@ -14,7 +14,7 @@
 	<h1 class="meme-title">{meme.name}</h1>
 	<div class="image-container">
 		<img
-			src="{import.meta.env.VITE_API_BASE}/static/images/preview/{meme.id.substring(
+			src="{import.meta.env.VITE_API_BASE}/static/images/normal/{meme.id.substring(
 				0,
 				2
 			)}/{meme.id.substring(2, 4)}/{meme.id.substring(4)}.webp"
