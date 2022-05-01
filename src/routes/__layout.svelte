@@ -1,6 +1,23 @@
 <script lang="ts">
 	import '../app.scss';
+	import { onMount } from 'svelte';
+	import Matomo, { matomo } from '@dexlib/svelte-matomo';
+
+	const matomoUrl = import.meta.env.VITE_MATOMO_URL;
+	const siteId = import.meta.env.VITE_MATOMO_SITEID;
+	console.log(matomoUrl);
+	const matomoEnabled = import.meta.env.VITE_MATOMO_ENABLED;
+
+	if (matomoEnabled) {
+		onMount(() => {
+			matomo.trackPageView();
+		});
+	}
 </script>
+
+{#if { matomoEnabled }}
+	<Matomo url={matomoUrl} siteId={siteId} />
+{/if}
 
 <main>
 	<slot />
