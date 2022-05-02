@@ -11,7 +11,7 @@
 					src="{import.meta.env.VITE_API_BASE}/static/images/preview/{meme.id.substring(
 						0,
 						2
-					)}/{meme.id.substring(2, 4)}/{meme.id.substring(4)}.webp"
+					)}/{meme.id.substring(2, 4)}/{meme.id}.webp"
 					alt={meme.name}
 					class="image"
 				/>
