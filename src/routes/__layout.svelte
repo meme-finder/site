@@ -16,7 +16,7 @@
 </script>
 
 {#if { matomoEnabled }}
-	<Matomo url={matomoUrl} siteId={siteId} />
+	<Matomo url={matomoUrl} {siteId} />
 {/if}
 
 <main>

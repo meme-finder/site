@@ -9,7 +9,7 @@
 
 	const onImageSelected = (e) => {
 		image = e.target.files[0];
-	}
+	};
 
 	async function onSubmit() {
 		console.log(image);
@@ -22,13 +22,19 @@
 			},
 			body: JSON.stringify(meme)
 		});
-		alert('Мем добавлен!')
+		alert('Мем добавлен!');
 	}
 </script>
 
 <h1>Добавить мем</h1>
 <form class="create-form" on:submit|preventDefault={onSubmit}>
-	<input name="image" on:change={(e) => onImageSelected(e)} bind:this={fileinput} type="file" accept=".jpg, .jpeg, .png, .webp" />
+	<input
+		name="image"
+		on:change={(e) => onImageSelected(e)}
+		bind:this={fileinput}
+		type="file"
+		accept=".jpg, .jpeg, .png, .webp"
+	/>
 	<input name="name" bind:value={name} type="text" placeholder="Имя" />
 	<input name="description" bind:value={description} type="text" placeholder="Описание" />
 	<input name="text" bind:value={text} type="text" placeholder="Текст" />
