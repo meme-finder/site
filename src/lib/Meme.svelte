@@ -9,6 +9,7 @@
 				0,
 				2
 			)}/{meme.id.substring(2, 4)}/{meme.id}.webp"
+			loading="lazy"
 			alt={meme.name}
 			class="image"
 		/>
