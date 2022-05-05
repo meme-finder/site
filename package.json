@@ -1,7 +1,7 @@
 {
 	"name": "memesearch-site",
 	"version": "0.2.0",
-	"license": "UNLICENSED",
+	"license": "GPL-3.0",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
