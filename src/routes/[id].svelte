@@ -16,4 +16,14 @@
 	export let meme;
 </script>
 
+<svelte:head>
+	<meta
+		property="og:image"
+		content="{import.meta.env.VITE_API_BASE}/static/images/normal/{meme.id.substring(
+			0,
+			2
+		)}/{meme.id.substring(2, 4)}/{meme.id}.webp"
+	/>
+</svelte:head>
+
 <FullMeme {meme} />
