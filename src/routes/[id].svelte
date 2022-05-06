@@ -17,6 +17,7 @@
 </script>
 
 <svelte:head>
+	<title>{meme.name} - Meme Finder</title>
 	<meta
 		property="og:image"
 		content="{import.meta.env.VITE_API_BASE}/static/images/normal/{meme.id.substring(
