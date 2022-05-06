@@ -32,7 +32,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@dexlib/svelte-matomo": "^0.1.4",
-		"@fontsource/fira-mono": "^4.5.7"
+		"@dexlib/svelte-matomo": "^0.1.4"
 	}
 }
