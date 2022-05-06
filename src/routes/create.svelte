@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Добавить мем</title>
+	<title>Добавить мем - Meme Finder</title>
 </svelte:head>
 
 <section>

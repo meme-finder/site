@@ -1,3 +1,3 @@
-# Meme Search Site
+# Meme Finder Site
 
-Frontend for Meme Search, written in Svelte
+Frontend for Meme Finder, written in Svelte
