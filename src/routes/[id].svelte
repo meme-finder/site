@@ -18,6 +18,7 @@
 
 <svelte:head>
 	<title>{meme.name} - Meme Finder</title>
+	<meta property="og:site_name" content="Meme Finder">
 	<meta property="og:locale" content="ru_RU" />
 	<meta property="og:type" content="object" />
 	<meta property="og:title" content={meme.name} />
@@ -29,7 +30,7 @@
 		content="{import.meta.env.VITE_API_BASE}/static/images/normal/{meme.id.substring(
 			0,
 			2
-		)}/{meme.id.substring(2, 4)}/{meme.id}.webp"
+		)}/{meme.id.substring(2, 4)}/{meme.id}.jpeg"
 	/>
 </svelte:head>
 
