@@ -3,7 +3,7 @@
 </script>
 
 <div class="meme">
-	<a href="/{meme.id}">
+	<a sveltekit:prefetch href="/{meme.id}">
 		<img
 			src="{import.meta.env.VITE_API_BASE}/static/images/preview/{meme.id.substring(
 				0,
