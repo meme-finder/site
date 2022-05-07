@@ -12,12 +12,6 @@ VITE_MATOMO_URL=https://matomo.averyan.ru # matomo url
 VITE_MATOMO_SITEID=1 # matomo site id
 ```
 
-### Development environment
-If you have docker-compose installed, you can start meilisearch by 1 command:
-```bash
-docker-compose up -d
-```
-
 ### Pages:
   - [https://memefinder.ru/](https://memefinder.ru/) - search
   - [https://memefinder.ru/create](https://memefinder.ru/create) - create meme
