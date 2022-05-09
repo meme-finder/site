@@ -1,8 +1,9 @@
 <script lang="ts">
 	import '../app.scss';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import Matomo, { matomo } from '@dexlib/svelte-matomo';
-	import { afterNavigate } from '$app/navigation';
+
 	const matomoUrl = import.meta.env.VITE_MATOMO_URL;
 	const siteId = import.meta.env.VITE_MATOMO_SITEID;
 	const matomoEnabled = import.meta.env.VITE_MATOMO_ENABLED;
@@ -13,11 +14,11 @@
 		});
 	}
 
-	function navigationTracker(navigation: { from: URL | null; to: URL }) {
-		matomo.trackPageView();
-	}
-
-	afterNavigate(navigationTracker);
+	page.subscribe((_) => {
+		if (matomoEnabled) {
+			matomo.trackPageView();
+		}
+	});
 </script>
 
 {#if { matomoEnabled }}
