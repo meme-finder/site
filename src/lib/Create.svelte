@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	let image: File;
 
 	const onImageSelected = (e) => {
@@ -7,14 +8,16 @@
 
 	async function onSubmit() {
 		const formData = new FormData();
-		formData.append("image", image);
+		formData.append('image', image);
 
 		const response = await fetch(import.meta.env.VITE_API_BASE + '/images', {
 			method: 'POST',
 			body: formData
 		});
 		if (response.ok) {
-			alert('Мем добавлен!');
+			const meme = await response.json();
+			const id: String = meme['id'];
+			goto('/' + id);
 		} else {
 			alert('Что-то пошло не так...');
 		}
