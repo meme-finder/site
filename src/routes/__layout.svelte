@@ -1,6 +1,5 @@
 <script lang="ts">
 	import '../app.scss';
-	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import Matomo, { matomo } from '@dexlib/svelte-matomo';
 
@@ -8,14 +7,9 @@
 	const siteId = import.meta.env.VITE_MATOMO_SITEID;
 	const matomoEnabled = import.meta.env.VITE_MATOMO_ENABLED;
 
-	if (matomoEnabled) {
-		onMount(() => {
-			matomo.trackPageView();
-		});
-	}
-
-	page.subscribe((_) => {
+	page.subscribe((page) => {
 		if (matomoEnabled) {
+			matomo.setCustomUrl(page.url);
 			matomo.trackPageView();
 		}
 	});
