@@ -2,7 +2,7 @@
 	import '../app.scss';
 	import { onMount } from 'svelte';
 	import Matomo, { matomo } from '@dexlib/svelte-matomo';
-
+	import { afterNavigate } from '$app/navigation';
 	const matomoUrl = import.meta.env.VITE_MATOMO_URL;
 	const siteId = import.meta.env.VITE_MATOMO_SITEID;
 	const matomoEnabled = import.meta.env.VITE_MATOMO_ENABLED;
@@ -12,6 +12,12 @@
 			matomo.trackPageView();
 		});
 	}
+
+	function navigationTracker(navigation: { from: URL | null; to: URL }) {
+		matomo.trackPageView();
+	}
+
+	afterNavigate(navigationTracker);
 </script>
 
 {#if { matomoEnabled }}
