@@ -7,7 +7,7 @@
 	let hits = [];
 
 	async function search() {
-		const result = await (await fetch(import.meta.env.VITE_API_BASE + '/images?q=' + query)).json();
+		const result = await (await fetch(import.meta.env.VITE_API_BASE + '/images?limit=1500&q=' + query)).json();
 		hits = result;
 	}
 
