@@ -32,6 +32,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@dexlib/svelte-matomo": "^0.1.4"
+		"@dexlib/svelte-matomo": "^0.1.4",
+		"svelte-lazy-image": "^0.5.1"
 	}
 }

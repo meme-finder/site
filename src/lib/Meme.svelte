@@ -1,17 +1,18 @@
 <script lang="ts">
+	import { useLazyImage as lazyImage } from 'svelte-lazy-image';
 	export let meme;
 </script>
 
 <div class="meme">
 	<a sveltekit:prefetch href="/{meme.id}">
 		<img
-			src="{import.meta.env.VITE_API_BASE}/static/images/preview/{meme.id.substring(
+			data-src="{import.meta.env.VITE_API_BASE}/static/images/preview/{meme.id.substring(
 				0,
 				2
 			)}/{meme.id.substring(2, 4)}/{meme.id}.webp"
-			loading="lazy"
 			alt={meme.name}
 			class="image"
+			use:lazyImage
 		/>
 	</a>
 </div>
