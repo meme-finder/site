@@ -1,22 +1,24 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	let image: File;
+	let images: File[];
 
 	const onImageSelected = (e) => {
-		image = e.target.files[0];
+		images = e.target.files;
 	};
 
 	async function onSubmit() {
 		const formData = new FormData();
-		formData.append('image', image);
+		images.forEach((image) => {
+			formData.append('image', image);
+		});
 
 		const response = await fetch(import.meta.env.VITE_API_BASE + '/images', {
 			method: 'POST',
 			body: formData
 		});
 		if (response.ok) {
-			const meme = await response.json();
-			const id: String = meme['id'];
+			const memes = await response.json();
+			const id: String = memes[0]['id'];
 			goto('/' + id);
 		} else {
 			alert('Что-то пошло не так...');
@@ -31,6 +33,7 @@
 		on:change={(e) => onImageSelected(e)}
 		type="file"
 		accept=".jpg, .jpeg, .png, .webp"
+		multiple
 	/>
 	<button type="submit">Добавить</button>
 </form>
