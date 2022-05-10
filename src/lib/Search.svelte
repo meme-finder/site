@@ -9,7 +9,6 @@
 	async function search() {
 		const result = await (await fetch(import.meta.env.VITE_API_BASE + '/images?q=' + query)).json();
 		hits = result;
-		matomo.trackSiteSearch(query, 'all', hits.length);
 	}
 
 	onMount(async () => {
