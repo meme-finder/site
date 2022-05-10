@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	let images: File[];
+	let images: FileList;
 
 	const onImageSelected = (e) => {
 		images = e.target.files;
@@ -8,7 +8,7 @@
 
 	async function onSubmit() {
 		const formData = new FormData();
-		images.forEach((image) => {
+		Array.from(images).forEach((image) => {
 			formData.append('image', image);
 		});
 
@@ -33,7 +33,7 @@
 		on:change={(e) => onImageSelected(e)}
 		type="file"
 		accept=".jpg, .jpeg, .png, .webp"
-		multiple
+		multiple={true}
 	/>
 	<button type="submit">Добавить</button>
 </form>
