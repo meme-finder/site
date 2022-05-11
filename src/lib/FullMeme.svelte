@@ -76,7 +76,7 @@
 	<input name="name" bind:value={name} type="text" placeholder="Имя" />
 	<input name="description" bind:value={description} type="text" placeholder="Описание" />
 	<input name="text" bind:value={text} type="text" placeholder="Текст на картинке" />
-	<select value={status}>
+	<select bind:value={status}>
 		{#each statuses as status}
 			<option value={status}>
 				{status}
