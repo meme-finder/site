@@ -7,6 +7,10 @@
 	let description = meme.description;
 	let text = meme.text;
 
+	let statuses = ['Published', 'Draft', 'Offered'];
+
+	let status = meme.status;
+
 	async function remove() {
 		const response = await fetch(import.meta.env.VITE_API_BASE + '/images/' + meme.id, {
 			method: 'DELETE'
@@ -39,6 +43,8 @@
 			meme.text = null;
 		}
 
+		meme.status = status;
+
 		const response = await fetch(import.meta.env.VITE_API_BASE + '/images/' + meme.id, {
 			method: 'PUT',
 			headers: {
@@ -70,6 +76,13 @@
 	<input name="name" bind:value={name} type="text" placeholder="Имя" />
 	<input name="description" bind:value={description} type="text" placeholder="Описание" />
 	<input name="text" bind:value={text} type="text" placeholder="Текст на картинке" />
+	<select value={status}>
+		{#each statuses as status}
+			<option value={status}>
+				{status}
+			</option>
+		{/each}
+	</select>
 	<button on:click={update}>Обновить</button>
 	<button on:click={remove}>Удалить</button>
 </div>
