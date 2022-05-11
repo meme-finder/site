@@ -2,11 +2,56 @@
 	import { goto } from '$app/navigation';
 
 	export let meme;
+
+	let name = meme.name;
+	let description = meme.description;
+	let text = meme.text;
+
 	async function remove() {
-		await fetch(import.meta.env.VITE_API_BASE + '/images/' + meme.id, {
+		const response = await fetch(import.meta.env.VITE_API_BASE + '/images/' + meme.id, {
 			method: 'DELETE'
 		});
-		goto('/');
+
+		if (response.ok) {
+			goto('/');
+		} else {
+			alert('Не удалось удалить мем');
+		}
+	}
+
+	async function update() {
+		// TODO: исправить лапшу
+		if (name) {
+			meme.name = name;
+		} else {
+			meme.name = null;
+		}
+
+		if (description) {
+			meme.description = description;
+		} else {
+			meme.description = null;
+		}
+
+		if (text) {
+			meme.text = text;
+		} else {
+			meme.text = null;
+		}
+
+		const response = await fetch(import.meta.env.VITE_API_BASE + '/images/' + meme.id, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(meme)
+		});
+
+		if (response.ok) {
+			alert('Мем обновлён!');
+		} else {
+			alert('Не удалось обновить мем');
+		}
 	}
 </script>
 
@@ -22,7 +67,10 @@
 			class="image"
 		/>
 	</div>
-	<p class="meme-description">{meme.description}</p>
+	<input name="name" bind:value={name} type="text" placeholder="Имя" />
+	<input name="description" bind:value={description} type="text" placeholder="Описание" />
+	<input name="text" bind:value={text} type="text" placeholder="Текст на картинке" />
+	<button on:click={update}>Обновить</button>
 	<button on:click={remove}>Удалить</button>
 </div>
 

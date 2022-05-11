@@ -18,7 +18,7 @@
 
 <svelte:head>
 	<title>{meme.name} - Meme Finder</title>
-	<meta property="og:site_name" content="Meme Finder">
+	<meta property="og:site_name" content="Meme Finder" />
 	<meta property="og:locale" content="ru_RU" />
 	<meta property="og:type" content="object" />
 	<meta property="og:title" content={meme.name} />
