@@ -30,7 +30,7 @@
 	/>
 
 	<div class="results">
-		{#each hits as hit}
+		{#each hits as hit (hit.id)}
 			<Meme meme={hit} />
 		{/each}
 	</div>
