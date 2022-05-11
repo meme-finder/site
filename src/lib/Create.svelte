@@ -32,7 +32,7 @@
 		name="image"
 		on:change={(e) => onImageSelected(e)}
 		type="file"
-		accept=".jpg, .jpeg, .png, .webp"
+		accept="image/*"
 		multiple={true}
 	/>
 	<button type="submit">Добавить</button>
