@@ -1,3 +1,12 @@
-.svelte-kit
-.git
+.DS_Store
 node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+
+*.log
+yarn-debug.log*
+yarn-error.log*
