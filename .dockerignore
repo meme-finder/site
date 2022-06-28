@@ -1,11 +1,12 @@
+.vercel
+.output
 .DS_Store
 node_modules
 /build
 /.svelte-kit
 /package
+.git
 .env
-.env.*
-!.env.example
 
 *.log
 yarn-debug.log*
