@@ -61,30 +61,35 @@
 	}
 </script>
 
-<div class="meme">
-	<h1 class="meme-title">{meme.name}</h1>
+<div class="full-flex">
+	<h1 class="meme-title">{meme.name ? meme.name : 'Безымянный'}</h1>
 	<div class="image-container">
 		<img
 			src="{import.meta.env.VITE_API_BASE}/static/images/normal/{meme.id.substring(
 				0,
 				2
 			)}/{meme.id.substring(2, 4)}/{meme.id}.webp"
-			alt={meme.name}
+			alt={meme.name ? meme.name : 'Безымянный'}
 			class="image"
 		/>
 	</div>
-	<input name="name" bind:value={name} type="text" placeholder="Имя" />
-	<input name="description" bind:value={description} type="text" placeholder="Описание" />
-	<input name="text" bind:value={text} type="text" placeholder="Текст на картинке" />
-	<select bind:value={status}>
-		{#each statuses as status}
-			<option value={status}>
-				{status}
-			</option>
-		{/each}
-	</select>
-	<button on:click={update}>Обновить</button>
-	<button on:click={remove}>Удалить</button>
+	<p>{description ? description : 'Описание не указано'}</p>
+	<p>{text ? text : 'На картинке нет текста'}</p>
+	<details class="full-flex">
+		<summary>Редактировать</summary>
+		<input name="name" bind:value={name} type="text" placeholder="Имя" />
+		<input name="description" bind:value={description} type="text" placeholder="Описание" />
+		<input name="text" bind:value={text} type="text" placeholder="Текст на картинке" />
+		<select bind:value={status}>
+			{#each statuses as status}
+				<option value={status}>
+					{status}
+				</option>
+			{/each}
+		</select>
+		<button on:click={update}>Обновить</button>
+		<button on:click={remove}>Удалить</button>
+	</details>
 </div>
 
 <style>
@@ -92,7 +97,7 @@
 		margin: 1rem;
 	}
 
-	.meme {
+	.full-flex {
 		width: 100%;
 		height: 100%;
 		display: flex;
