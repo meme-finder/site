@@ -1,6 +1,5 @@
 # Meme Finder Site 🌐
 
-![Pipeline](https://git.averyan.ru/meme-finder/site/badges/main/pipeline.svg)
 ![License](https://img.shields.io/github/license/meme-finder/site)
 
 Frontend for Meme Finder written in Svelte
